@@ -58,7 +58,7 @@
 							<small><a href="https://twitter.com/hemant_pt">@hemant_pt</a></small>
 							</td>
 							<td>
-							<small><a href="https://twitter.com/hemant_pt">@carstenkessler</a></small>
+							<small><a href="https://twitter.com/carstenkessler">@carstenkessler</a></small>
 							</td>
 							</tr>
 						</tbody>
@@ -68,11 +68,11 @@
 
 				<section>
 					<h2>The Main Problem</h2>
-					<p>
+					<p class="fragment highlight-blue">
 						Seamless interoperability still eludes the humanitarian and crisis response communities
 					</p>
-					<p>	
-						Syntax not so much an issue, but semantics are difficult
+					<p class="fragment highlight-blue">	
+						Standards for syntax are in use, but semantics are more difficult
 					</p>
 				</section>
 				
@@ -156,8 +156,14 @@
 				</section>
 				
 				<section>
-					<h2>Semantics: Vocabularies and Ontologies</h2>
-					<h3>HXL and MOAC</h3>
+					<h2>Vocabularies and Ontologies</h2>
+					<h4>Human and machine understanding of context</h4>
+					<ul>
+						<li class="fragment">HXL and MOAC</li>
+						<li class="fragment">PROV-O</li>
+						<li class="fragment">schema.org</li>
+						<li class="fragment">disease-ontology.org</li>
+					</ul>
 				</section>	
 				
 				<section>
@@ -172,7 +178,7 @@ Fairfax_VA hasPopulation Pop_A
 Pop_A hasResiliencyMeasure ‘‘Low’’ 
 					</code></pre>
 				
-					<p><small>We can infer, through a combination of transitivity and geospatial intersection rules, that:</small></p>
+					<p><small>Through a combination of logical rules, we can infer:</small></p>
 					<pre><code>
 Hurricane_Boris affects Pop_A
 					</code></pre>
@@ -182,7 +188,10 @@ Hurricane_Boris affects Pop_A
 				<section>
 					<h2>Towards a Humanitarian Knowledge Graph</h2>
 					<img height="300" data-src="http://localhost:8000/images/graphexample.png" alt="Graph Example">
-					<p>Query expansion for humanitarian operations</p>
+					<p>Query expansion for humanitarian operations:</p>
+					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;What are the immediate humanitarian needs in Tacloban?&rdquo;
+					</blockquote>
 				</section>
 
 				
@@ -195,6 +204,10 @@ Hurricane_Boris affects Pop_A
 					
 					<section>
 						<h2>Why do this?</h2>
+						<ul>
+							<li class="fragment">More sources of data and knowledge for the graph</li>
+							<li class="fragment">Leverage data sources that are not humanitarian, yet still relevant</li>
+							<li class="fragment">Data stays with the owner, but exposed for the community</li>
 					</section>
 						
 					
@@ -204,6 +217,22 @@ Hurricane_Boris affects Pop_A
 						<li>Using HTTP, dereferenceable URIs for generic, flexible publishing of self-describing data (vs documents)</li>
 						<li>Allows us to refer to <strong>canonical representations (identity)</strong> of operationally-relevant things</li>
 						</ul>
+						<p>
+						<table>
+							<tbody>
+							<tr>
+							<td>
+								<img height="200" data-src="http://localhost:8000/images/GeorgeWashington.png" alt="George Washington">
+							</td>
+							<td>
+								<img height="200" data-src="http://localhost:8000/images/WashingtonState.png" alt="Washington State">
+							</td>
+							<td>
+								<img height="200" data-src="http://localhost:8000/images/WashingtonDC.png" alt="DC">
+							</td>
+							</tbody>
+						</table>	
+					</p>
 						<p>
 						<span class="fragment">Canonical <> The Only One...</span>
 						<span class="fragment">...because of URI Aliases</span>
@@ -265,7 +294,7 @@ Hurricane_Boris affects Pop_A
 					
 					<section>
 					<h2>Who should own data?</h2>
-					<p><small>Should we expect them to maintain part of the Knowledge Graph?</small></p>
+					<p>Should we expect them to maintain part of the graph?</p>
 					<p><span class="fragment">Maybe?</span></p>
 					</section>
 
@@ -276,8 +305,10 @@ Hurricane_Boris affects Pop_A
 				<ol>
 					<span class="fragment"><li>Develop domain ontologies in earnest</li></span>
 					<span class="fragment"><li>Conversion tools for first mile (new HXL?)</li></span>
-					<span class="fragment"><li>Find trustworthy publisher organizations</li></span>
+					<span class="fragment"><li>Find trustworthy publisher organizations willing to take on hosting duties</li></span>
 					<span class="fragment"><li>Build tools to hook into this large Humanitarian Knowlege Graph</li></span>
+				</ol>
+				<p class="fragment"><strong>The building blocks are there. We need to figure out how to combine them.</strong></p>
 				</section>
 				
 				<section>
@@ -296,7 +327,7 @@ Hurricane_Boris affects Pop_A
 							<small><a href="https://twitter.com/hemant_pt">@hemant_pt</a></small>
 							</td>
 							<td>
-							<small><a href="https://twitter.com/hemant_pt">@carstenkessler</a></small>
+							<small><a href="https://twitter.com/carstenkessler">@carstenkessler</a></small>
 							</td>
 							</tr>
 						</tbody>
@@ -305,8 +336,7 @@ Hurricane_Boris affects Pop_A
 				</section>
 
 <!-- ##### end presentation ##### -->
-
-
+			
 			</div>
 
 		</div>
