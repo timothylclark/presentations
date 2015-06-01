@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>GeoSemantics 2015</title>
+
+		<meta name="description" content="Presentation for OGC GeoSemantics Summit 2015">
+		<meta name="author" content="Tim Clark">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/milcord.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class='milcordheader'>
+			</div>
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h3>Military Use Cases for Geospatial Linked Data</h2>
+					<h4>GeoSemantics Summit 2015</h3>
+					<p>
+						<table>
+						<tbody>
+							<tr>
+							<td>
+							<img data-src="images/twitterlogo.png" alt="Twitter logo">
+							</td>
+							<td>
+							<small><a href="https://twitter.com/timothylclark">@timothylclark</a></small>
+							</td>
+							</tr>
+						</tbody>
+						</table>	
+					</p>
+				</section>
+
+				<section>
+					<h2>The Main Problem</h2>
+					<p class="fragment highlight-blue">
+						Seamless interoperability still eludes the humanitarian and crisis response communities
+					</p>
+					<p class="fragment highlight-blue">	
+						Standards for syntax are in use, but semantics are more difficult
+					</p>
+				</section>
+				
+				<section>
+					<h2>Focus of this session</h2>
+					<p class="fragment highlight-blue">Scope of the problem: is it really overkill?</p>
+					<p class="fragment highlight-blue">Syntactic measures to adress interoperability</p>
+					<p class="fragment highlight-blue">Data structures that capture semantics and context</p>
+					<p class="fragment highlight-blue">Scalable platforms and architectures</p>
+					<p class="fragment highlight-blue">Organizational roles and responsibilities</p>					
+				</section>
+				
+				<section>
+				
+					<section>
+					<h2>Two ways of looking at the humanitarian world</h2>
+					</section>
+					
+					<section>
+						<h3>Closed World Assumption</h3>
+						<table>
+						<tbody>
+						<tr>
+						<td>
+						<ul>
+						<li>If something is not known about a domain, it is assumed to be false</li>
+						<li>Relational databases reinforce these assumptions</li>
+						<li>Database schema change required to incorporate new knowledge</li>
+						</ul>
+						</td>
+						<td>
+						<img data-src="images/doorclosed.png" alt="Closed Door">
+						</td>
+						</tbody>
+						</table>
+					</section>
+					
+					<section>
+						<h3>Open World Assumption</h3>
+						<table>
+						<tbody>
+						<tr>
+						<td>
+						<ul>
+						<li>What is not known is simply still unknown</li>
+						<li>New knowledge can be seamlessly incorporated as it is learned</li>
+						<li>Extend the core vocabularies as needed</li>
+						</ul>
+						</td>
+						<td>
+						<img data-src="images/dooropened.png" alt="Open Door">
+						</td>
+						</tbody>
+						</table>
+					</section>
+					
+				</section>
+				
+				<section>
+					<h2>Syntactic Interoperability</h2>
+				<table>
+					<tbody>
+					<tr>
+					<td>
+						<img height="100" data-src="images/ogc_logo_0.jpg" alt="OGC logo">
+					</td>
+					<td>
+						<img height="100" data-src="images/rdf_w3c_icon.96" alt="RDF logo">
+					</td>
+					<td>
+						<img height="100" data-src="images/owl.png" alt="OWL logo">
+					</td>
+					<td>
+						<img height="100" data-src="images/json-ld-logo.png" alt="JSON-LD logo">
+					</td>
+					<td>
+						...
+					</td>
+					</tbody>
+				</table>				
+				</section>
+				
+				<section>
+					<h2>Vocabularies and Ontologies</h2>
+					<h4>Human and machine understanding of context</h4>
+					<ul>
+						<li class="fragment">HXL and MOAC</li>
+						<li class="fragment">PROV-O</li>
+						<li class="fragment">schema.org</li>
+						<li class="fragment">disease-ontology.org</li>
+					</ul>
+				</section>	
+				
+				<section>
+					<h2>Machine Reasoning</h2>
+					<pre><code data-trim contenteditable>
+Hurricane_Boris hasImpactAreaGeometry [WKT polygon of hurricane track and impact areas]
+
+Fairfax_VA hasGeometry [WKT polygon of county boundaries]
+
+Fairfax_VA hasPopulation Pop_A
+
+Pop_A hasResiliencyMeasure ‘‘Low’’ 
+					</code></pre>
+				
+					<p><small>Through a combination of logical rules, we can infer:</small></p>
+					<pre><code>
+Hurricane_Boris affects Pop_A
+					</code></pre>
+					
+				</section>
+				
+				<section>
+					<h2>Towards a Humanitarian Knowledge Graph</h2>
+					<img height="300" data-src="images/graphexample.png" alt="Graph Example">
+					<p>Query expansion for humanitarian operations:</p>
+					<blockquote>
+						&ldquo;What are the immediate humanitarian needs in Tacloban?&rdquo;
+					</blockquote>
+				</section>
+
+				
+				<section>
+					<section>
+						<h2>Linked Data</h2>
+						<img height="400" data-src="images/geordf.png" alt="RDF Image">
+						<p><small>Cool icon courtesy of <a href="http://asom-mena.org/an-event-on-artificial-intelligence-at-aub-a-week-on-linked-data/">ASOM-MENA</a>.</small></p>
+					</section>
+					
+					<section>
+						<h2>Why do this?</h2>
+						<ul>
+							<li class="fragment">More sources of data and knowledge for the graph</li>
+							<li class="fragment">Leverage data sources that are not humanitarian, yet still relevant</li>
+							<li class="fragment">Data stays with the owner, but exposed for the community</li>
+					</section>
+						
+					
+					<section>
+						<h3>Are we talking about the same thing?</h3>
+						<ul>
+						<li>Using HTTP, dereferenceable URIs for generic, flexible publishing of self-describing data (vs documents)</li>
+						<li>Allows us to refer to <strong>canonical representations (identity)</strong> of operationally-relevant things</li>
+						</ul>
+						<p>
+						<table>
+							<tbody>
+							<tr>
+							<td>
+								<img height="200" data-src="images/GeorgeWashington.png" alt="George Washington">
+							</td>
+							<td>
+								<img height="200" data-src="images/WashingtonState.png" alt="Washington State">
+							</td>
+							<td>
+								<img height="200" data-src="images/WashingtonDC.png" alt="DC">
+							</td>
+							</tbody>
+						</table>	
+					</p>
+						<p>
+						<span class="fragment">Canonical <> The Only One...</span>
+						<span class="fragment">...because of URI Aliases</span>
+						</p>
+
+					</section>
+					
+					<section>
+						<h2>What's your source?</h2>
+						<img height="350" data-src="images/Semantic-web-stack.png" alt="Semantic Web Layer Cake">
+						<p><span class="fragment">Trust in source through cryptography</span></p>
+						<p><span class="fragment">Trust that inferences/derived statements are being made using sound logic</span></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+					<h2>Scalable Infrastructure and Platforms</h2>
+					<table>
+						<tbody>
+						<tr>
+						<td>
+							<img height="80" data-src="images/320px-Googlelogo.png" alt="Google logo">
+						</td>
+						<td>
+							<img height="80" data-src="images/AmazonWebservices_Logo.svg.png" alt="AWS logo">
+						</td>
+						<td>
+							<img height="80" data-src="images/softlayerlogo.png" alt="IBM Softlayer logo">
+						</td>
+						<td>
+							...
+						</td>
+						</tbody>
+					</table>
+					<p><span class="fragment">Barrier to use is lower than ever before</span></p>
+						
+					</section>
+					
+				</section>
+				
+				<section>
+					<section>
+					<h2>Organizational Roles and Responsibilities</h2>
+					</section>
+					
+					<section>
+					<h2>Who should collect data?</h2>
+					
+					<p>Should we expect them to write to RDF stores?</p>
+					<p><span class="fragment">Probably not.</span></p>
+					</section>
+					
+					<section>
+					<h2>Who should publish data?</h2>
+					<p>Should we expect them to build RDF stores and maintain ontologies?</p>
+					<p><span class="fragment">Maybe?</span></p>
+					</section>
+					
+					<section>
+					<h2>Who should own data?</h2>
+					<p>Should we expect them to maintain part of the graph?</p>
+					<p><span class="fragment">Maybe?</span></p>
+					</section>
+
+				</section>
+				
+				<section>
+				<h2>Next Steps</h2>
+				<ol>
+					<span class="fragment"><li>Develop domain ontologies in earnest</li></span>
+					<span class="fragment"><li>Conversion tools for first mile (new HXL?)</li></span>
+					<span class="fragment"><li>Find trustworthy publisher organizations willing to take on hosting duties</li></span>
+					<span class="fragment"><li>Make it work in disconnected settings; only send what's necessary over the internet pipe</li></span>
+					<span class="fragment"><li>Build tools to hook into this large Humanitarian Knowlege Graph</li></span>
+				</ol>
+				<p class="fragment"><strong>The building blocks are there. We need to figure out how to combine them.</strong></p>
+				</section>
+				
+				<section>
+				<h3>Thank you</h3>
+					<p>
+						<table>
+						<tbody>
+							<tr>
+							<td>
+							<img data-src="images/twitterlogo.png" alt="Twitter logo">
+							</td>
+							<td>
+							<small><a href="https://twitter.com/timothylclark">@timothylclark</a></small>
+							</td>
+							<td>
+							<small><a href="https://twitter.com/hemant_pt">@hemant_pt</a></small>
+							</td>
+							<td>
+							<small><a href="https://twitter.com/carstenkessler">@carstenkessler</a></small>
+							</td>
+							</tr>
+						</tbody>
+						</table>	
+					</p>
+				</section>
+
+<!-- ##### end presentation ##### -->
+			
+			</div>
+			<div class='milcordfooter'>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
