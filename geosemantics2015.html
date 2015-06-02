@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>GeoSemantics 2015</title>
+		<title>GeoSemantics Summit 2015</title>
 
 		<meta name="description" content="Presentation for OGC GeoSemantics Summit 2015">
 		<meta name="author" content="Tim Clark">
@@ -40,7 +40,8 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h3>Civil-Military Linked Data Use Cases</h2>
+					<h2>Civil-Military Operations</h2>
+					<h3>Linked Data Use Cases</h3>
 					<h4>GeoSemantics Summit 2015</h3>
 					<p>
 						<table>
@@ -62,19 +63,21 @@
 				</section>
 
 				<section>
-					<h2>Introduction</h2>
-					<p class="fragment highlight-blue">
-						CMO needs Linked Data - too many ways to interpret things
-					</p>
-					<p class="fragment highlight-blue">	
-						Standards for syntax are in use, but semantics are more difficult
-					</p>
+					<h3>Introduction</h3>
+					<ul>
+						<li class="fragment highlight-blue">
+							CMO needs Linked Data for its independent actors
+						</li>
+						<li class="fragment highlight-blue">	
+							Standards for syntax mature, but not so for semantics
+						</li>
+					</ul>
 				</section>
 				
 				<section>
 				
 					<section>
-					<h2>Two ways of looking at the humanitarian world</h2>
+					<h3>Two ways of looking at the CMO world</h3>
 					</section>
 					
 					<section>
@@ -114,50 +117,78 @@
 						</tbody>
 						</table>
 					</section>
+				</section>
+				
+				<section>
+					<h3>Syntactic Interoperability</h3>
+					<table>
+						<tbody>
+						<tr>
+						<td>
+							<img height="100" data-src="images/ogc_logo_0.jpg" alt="OGC logo">
+						</td>
+						<td>
+							<img height="100" data-src="images/rdf_w3c_icon.96" alt="RDF logo">
+						</td>
+						<td>
+							<img height="100" data-src="images/owl.png" alt="OWL logo">
+						</td>
+						<td>
+							<img height="100" data-src="images/json-ld-logo.png" alt="JSON-LD logo">
+						</td>
+						<td>
+							...
+						</td>
+						</tbody>
+					</table>				
+				</section>
 					
-				</section>
-				
 				<section>
-					<h2>Syntactic Interoperability</h2>
-				<table>
-					<tbody>
-					<tr>
-					<td>
-						<img height="100" data-src="images/ogc_logo_0.jpg" alt="OGC logo">
-					</td>
-					<td>
-						<img height="100" data-src="images/rdf_w3c_icon.96" alt="RDF logo">
-					</td>
-					<td>
-						<img height="100" data-src="images/owl.png" alt="OWL logo">
-					</td>
-					<td>
-						<img height="100" data-src="images/json-ld-logo.png" alt="JSON-LD logo">
-					</td>
-					<td>
-						...
-					</td>
-					</tbody>
-				</table>				
-				</section>
-				
-				<section>
-					<h2>Vocabularies and Ontologies</h2>
-					<h4>Human and machine understanding of context</h4>
-					<ul>
-						<li class="fragment">HXL and MOAC</li>
-						<li class="fragment">PROV-O</li>
-						<li class="fragment">schema.org</li>
-						<li class="fragment">disease-ontology.org</li>
-					</ul>
+					<section>
+						<h3>CMO's Guiding Documents</h3>
+						<p>
+						<table>
+							<tbody>
+							<tr>
+							<td>
+								<img height="350" data-src="images/FM3-07.png" alt="Army FM 3-07">
+							</td>
+							<td>
+								<img height="350" data-src="images/JP3-57.png" alt="JP 3-57">
+							</td>
+							<td>
+								<img height="350" data-src="images/MCWP3-33-1.png" alt="MCWP 3-33.1">
+							</td>
+							</tbody>
+						</table>	
+						</p>
+					</section>
+					<section>
+						<h3>Civil IPB and ASCOPE Taxonomy</h3>
+						<img height="400" data-src="images/ASCOPE.png" alt="ASCOPE table">
+					</section>
+					<section>
+						<h3>Humanitarian Exchange Language (HXL)</h3>
+						<img height="500" data-src="images/hxl_index_card.png" alt="HXL card">
+					</section>
+					<section>
+						<h3>Additional Vocabularies and Ontologies</h3>
+						<ul>
+							<li class="fragment"><a href="http://observedchange.com/moac/ns/">Management of a Crisis</a></li>
+							<li class="fragment"><a href=http://www.w3.org/TR/prov-o/">PROV-O</a></li>
+							<li class="fragment"><a href="http://schema.org/">schema.org</a></li>
+							<li class="fragment"><a href="http://disease-ontology.org/">disease-ontology.org</a> (Public Health)</li>
+							<li class="fragment"><a href="https://www.vectorbase.org/">VectorBase</a> (Public Health)</li>
+						</ul>
+					</section>			
 				</section>	
 				
 				<section>
-					<h2>Machine Reasoning</h2>
+					<h3>Goal: Machine Reasoning</h3>
 					<pre><code data-trim contenteditable>
-Hurricane_Boris hasImpactAreaGeometry [WKT polygon of hurricane track and impact areas]
+Hurricane_Boris hasImpactAreaGeometry [WKT polygon]
 
-Fairfax_VA hasGeometry [WKT polygon of county boundaries]
+Fairfax_VA hasGeometry [WKT boundary polygon]
 
 Fairfax_VA hasPopulation Pop_A
 
@@ -170,16 +201,7 @@ Hurricane_Boris affects Pop_A
 					</code></pre>
 					
 				</section>
-				
-				<section data-background="images/graphexample.png" data-background-size="700px" data-background-opacity="0.5">
-					<h2>Towards a Humanitarian Knowledge Graph</h2>
-					<p>Query expansion for humanitarian operations:</p>
-					<blockquote>
-						&ldquo;What are the immediate humanitarian needs in Tacloban?&rdquo;
-					</blockquote>
-				</section>
-
-				
+								
 				<section>
 					<section>
 						<h2>Linked Data</h2>
@@ -191,7 +213,7 @@ Hurricane_Boris affects Pop_A
 						<h2>Why do this?</h2>
 						<ul>
 							<li class="fragment">More sources of data and knowledge for the graph</li>
-							<li class="fragment">Leverage data sources that are not humanitarian, yet still relevant</li>
+							<li class="fragment">Leverage data sources that are not CMO-related, yet still relevant</li>
 							<li class="fragment">Data stays with the owner, but exposed for the community</li>
 					</section>
 						
@@ -217,7 +239,7 @@ Hurricane_Boris affects Pop_A
 							</td>
 							</tbody>
 						</table>	
-					</p>
+						</p>
 						<p>
 						<span class="fragment">Canonical <> The Only One...</span>
 						<span class="fragment">...because of URI Aliases</span>
@@ -227,70 +249,40 @@ Hurricane_Boris affects Pop_A
 					
 					<section>
 						<h2>What's your source?</h2>
-						<img height="350" data-src="images/Semantic-web-stack.png" alt="Semantic Web Layer Cake">
+						<img height="250" data-src="images/Semantic-web-stack.png" alt="Semantic Web Layer Cake">
 						<p><span class="fragment">Trust in source through cryptography</span></p>
 						<p><span class="fragment">Trust that inferences/derived statements are being made using sound logic</span></p>
 					</section>
 				</section>
 				
 				<section>
-					<section>
-					<h2>Organizational Roles and Responsibilities</h2>
-					</section>
-					
-					<section>
-					<h2>Who should collect data?</h2>
-					
-					<p>Should we expect them to write to RDF stores?</p>
-					<p><span class="fragment">Probably not.</span></p>
-					</section>
-					
-					<section>
-					<h2>Who should publish data?</h2>
-					<p>Should we expect them to build RDF stores and maintain ontologies?</p>
-					<p><span class="fragment">Maybe?</span></p>
-					</section>
-					
-					<section>
-					<h2>Who should own data?</h2>
-					<p>Should we expect them to maintain part of the graph?</p>
-					<p><span class="fragment">Maybe?</span></p>
-					</section>
-
-				</section>
-				
-				<section>
-					<h2>GeoSemantic Requirements</h2>
-					<p class="fragment highlight-blue">
-						Ways to describe what's nearby, and what that means in context
-					</p>
-					<p class="fragment highlight-blue">	
-						Geospatial filtering
-					</p>
-					<p class="fragment highlight-blue">	
-						Descriptions of scale
-					</p>
-					<p class="fragment highlight-blue">	
-						Enablers of reasoning
-					</p>
-				</section>
-				
-				<section>
-					<h2>Required functions</h2>
-					<p>most exist in geosparql</p>
+					<h3>GeoSemantic Requirements</h3>
+					<ul>
+						<li class="fragment">Nearby, Near to, North of...and relation to topology</li>
+						<li class="fragment">gn:nearbyFeatures</li>
+						<li class="fragment">Describing of scale</li>
+						<li class="fragment">Mereology (Has parts, Is part of)</li>
+						<li class="fragment">Geospatial filtering using context and geometry</li>
+						<li class="fragment">*Node/edge recommendations for common relationships</li>
+					</ul>
 				</section>
 				
 				<section>
 					<img data-src="images/geonames.png" alt="Geonames Logo">
-					<h3>Limitations</h3>
-					<p>missing associated geometries, need to get from other sources</p>
-					<p>Quattroshapes, GADM-RDF project</p>
+					<h3>Place Names/Toponyms resolution</h3>
+					<ul>
+						<li>Multiple "canonical" sources (gn, Google, Yahoo, OSM)</li>
+						<li>Missing associated geometries, need to get from other sources</li>
+						<li>Quattroshapes, GADM-RDF project</li>
+					</ul>
 				</section>
 				
 				<section>
-					<h3>Scale</h3>
-					<p>Determining contextual applicability (should this be included in my results, or is it too large/small scale to be applicable?)</p>
-					<p>blah blah</p>
+					<h2>Building a CMO Knowledge Graph</h2>
+					<img height="300" data-src="images/graphexample.png" alt="Graph Example">
+					<blockquote>
+						&ldquo;What are the immediate humanitarian needs in Tacloban district?&rdquo;
+					</blockquote>
 				</section>
 				
 				<section>
@@ -300,7 +292,7 @@ Hurricane_Boris affects Pop_A
 					<span class="fragment"><li>Conversion tools for first mile (new HXL?)</li></span>
 					<span class="fragment"><li>Find trustworthy publisher organizations willing to take on hosting duties</li></span>
 					<span class="fragment"><li>Make it work in disconnected settings; only send what's necessary over the internet pipe</li></span>
-					<span class="fragment"><li>Build tools to hook into this large Humanitarian Knowlege Graph</li></span>
+					<span class="fragment"><li>Build tools to hook into this large CMO Knowlege Graph</li></span>
 				</ol>
 				<p class="fragment"><strong>The building blocks are there. We need to figure out how to combine them.</strong></p>
 				</section>
@@ -324,6 +316,7 @@ Hurricane_Boris affects Pop_A
 						</tbody>
 						</table>	
 					</p>
+					<p><small><a href="http://timothylclark.github.io/presentations/geosemantics2015.html?print-pdf">Print this presentation (Chrome users only)</a></small></p>
 				</section>
 
 <!-- ##### end presentation ##### -->
@@ -344,6 +337,11 @@ Hurricane_Boris affects Pop_A
 				progress: true,
 				history: true,
 				center: true,
+				
+				//parallaxBackgroundImage: "images/Ephesus.jpg", // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+				// Parallax background size
+    			//parallaxBackgroundSize: "2100px 900px", // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+
 
 				transition: 'convex', // none/fade/slide/convex/concave/zoom
 
