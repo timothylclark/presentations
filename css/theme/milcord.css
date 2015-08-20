@@ -80,9 +80,15 @@ body {
 
 .reveal h3 {
   font-size: 1.3em; }
+  
+.reveal h3-emphasis {
+  font-size: 1.3em;
+  color: #3a5fcd;
+  margin-bottom: 20px; }
 
 .reveal h4 {
-  font-size: 1em; }
+  font-size: 1em;
+  color: #3a5fcd; }
 
 .reveal h1 {
   text-shadow: none; }
@@ -108,7 +114,8 @@ body {
 .reveal ol, .reveal dl, .reveal ul {
   display: inline-block;
   text-align: left;
-  margin: 0 0 0 1em; }
+  vertical-align: center;
+  margin: 0 0 20px 1em; }
 
 .reveal ol {
   list-style-type: decimal; }
@@ -138,7 +145,7 @@ body {
 .reveal blockquote {
   display: block;
   position: relative;
-  width: 70%;
+  width: 100%;
   margin: 20px auto;
   padding: 5px;
   font-style: italic;
@@ -200,12 +207,16 @@ body {
 
 .reveal small {
   display: inline-block;
-  font-size: 0.6em;
+  font-size: 0.8em;
   line-height: 1.2em;
-  vertical-align: top; }
+  vertical-align: center; }
 
 .reveal small * {
   vertical-align: top; }
+  
+.reveal tiny {
+  font-size: 0.7em;
+  line-height: 1.2em; }
 
 /*********************************************
  * LINKS
